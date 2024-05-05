@@ -16,7 +16,8 @@ public class Application {
     public Result run()
     {
         String []parameters=mainController.getView().getParameters();
-        String mode =parameters[0];
+        String mode = parameters[0];
+//        String mode ="1";
         Function function=getFunction(mode);
         return function.execute(parameters);
     }
@@ -26,7 +27,10 @@ public class Application {
         {
             case "1"-> FunctionCode.valueOf(ENCODE).getFunction();
             case "2"-> FunctionCode.valueOf(DECODE).getFunction();
+            case "3"-> FunctionCode.valueOf(BRUTE_FORCE).getFunction();
+            case "4"-> FunctionCode.valueOf(EXIT).getFunction();
             default -> FunctionCode.valueOf(UNSUPPORTED_FUNCTION).getFunction();
+
 
         };
     }

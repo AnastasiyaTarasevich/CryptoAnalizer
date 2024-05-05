@@ -10,6 +10,7 @@ public class MainController {
     }
 
     public View getView() {
+
         return view;
     }
 }
