@@ -5,7 +5,7 @@ import com.javarush.task.jdk13.task53.task5307.Exception.ApplicationException;
 import java.io.*;
 import java.util.Scanner;
 
-public class Reading {
+public class Reading_Writing {
     static String readFile(String filePath) throws IOException {
         StringBuilder sb = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
