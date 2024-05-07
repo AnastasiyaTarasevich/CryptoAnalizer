@@ -13,5 +13,6 @@ public class Main {
         Application application=new Application(mainController);
         Result result=application.run();
         application.printResult(result);
+
     }
 }

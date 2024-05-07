@@ -3,6 +3,7 @@ package com.javarush.task.jdk13.task53.task5307.app;
 import com.javarush.task.jdk13.task53.task5307.Entity.Result;
 import com.javarush.task.jdk13.task53.task5307.controller.MainController;
 import com.javarush.task.jdk13.task53.task5307.repository.FunctionCode;
+import com.javarush.task.jdk13.task53.task5307.repository.ResultCode;
 import com.javarush.task.jdk13.task53.task5307.services.Function;
 
 import static com.javarush.task.jdk13.task53.task5307.constants.FunctionCodeConstants.*;
@@ -17,9 +18,13 @@ public class Application {
     {
         String []parameters=mainController.getView().getParameters();
         String mode = parameters[0];
-//        String mode ="1";
         Function function=getFunction(mode);
-        return function.execute(parameters);
+        Result result = function.execute(parameters);
+        //FIXME рекурсия???
+        if (result.getResultCode() == ResultCode.OK) {
+            run();
+        }
+        return result;
     }
     private Function getFunction(String mode)
     {
