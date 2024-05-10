@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="948.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.CryptoAnalizer.controller.HelloController">
+   <children>
+       <ComboBox fx:id="modeComboBox" layoutX="27.0" layoutY="42.0" maxWidth="368.0" onAction="#handleModeChange" prefHeight="25.0" prefWidth="368.0" promptText="Выберите режим">
+
+           <items>
+               <FXCollections fx:factory="observableArrayList">
+                   <String fx:value="Шифрование" />
+                   <String fx:value="Расшифровка" />
+                   <String fx:value="Brute Force" />
+
+               </FXCollections>
+           </items>
+       </ComboBox>
+       <Label layoutX="36.0" layoutY="103.0" style="-fx-font-weight: bold;" text="Путь к файлу:" />
+       <Label fx:id="referenceFileLabel" layoutX="10.0" layoutY="199.0" style="-fx-font-weight: bold;" text="Путь к референсному файлу:" visible="false" />
+        <Label layoutX="59.0" layoutY="155.0" style="-fx-font-weight: bold;" text="Ключ:" />
+        <TextField fx:id="keyTextField" layoutX="221.0" layoutY="151.0" prefHeight="25.0" prefWidth="289.0" style="-fx-background-radius: 5px;" text="13" />
+       <TextArea fx:id="outputTextArea" layoutX="50.0" layoutY="277.0" prefHeight="199.0" prefWidth="788.0" style="-fx-background-radius: 5px;" wrapText="true" />
+        <Button fx:id="executeButton" layoutX="339.0" layoutY="550.0" onAction="#execute" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 5px;" text="Выполнить" />
+        <Button fx:id="clearButton" layoutX="454.0" layoutY="550.0" onAction="#clear" style="-fx-background-color: #FFC107; -fx-text-fill: black; -fx-background-radius: 5px;" text=" Очистить результат" />
+        <TextField fx:id="FilePathTextField" layoutX="221.0" layoutY="99.0" prefHeight="25.0" prefWidth="289.0" style="-fx-background-radius: 5px;"  />
+        <Button fx:id="browseButton" layoutX="539.0" layoutY="99.0" onAction="#handleBrowseAction" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 5px;" text="Обзор" />
+        <TextField fx:id="referenceFilePathTextField" layoutX="221.0" layoutY="195.0" prefHeight="25.0" prefWidth="289.0" style="-fx-background-radius: 5px;" visible="false" />
+        <Button fx:id="browseReferenceButton" layoutX="539.0" layoutY="195.0" onAction="#handleBrowseReferenceAction" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 5px;" text="Обзор" visible="false" />
+
+   </children>
+</AnchorPane>
